@@ -3,7 +3,9 @@
 
 #include <iostream>
 
-class WindowDecorator {
+#include "Window.h"
+
+class WindowDecorator : public Window {
 	public: // Constructors
 		WindowDecorator() {
 			std::cout << "Constructing a WindowDecorator" << std::endl;
@@ -13,6 +15,7 @@ class WindowDecorator {
 		}
 	public: // Utilities
 	protected: // Facilities
+		Window * m_decoratedWindow;
 };
 
 #endif
