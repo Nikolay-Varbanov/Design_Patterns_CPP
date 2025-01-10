@@ -9,13 +9,14 @@
 class HorizontalScrollBarDecorator : public WindowDecorator {
 	public: // Constructs
 		HorizontalScrollBarDecorator(Window * decoratedWindow) : WindowDecorator(decoratedWindow)  {
-			std::cout << "Constructing a Horizontal Scroll Bar Decorator" << std::endl;
+			std::cout << "Constructing a HorizontalScrollBarDecorator" << std::endl;
 		}
 		~HorizontalScrollBarDecorator() {
-			std::cout << "Deconstructing a Horizontal Scroll Bar Decorator" << std::endl;
+			std::cout << "Deconstructing a HorizontalScrollBarDecorator" << std::endl;
 		}
 	public: // Utility
 		void draw() {
+			std::cout << "HorizontalScrollBarDecorator::draw()" << std::endl;
 			drawHorizontalScrollBar();
 			m_decoratedWindow -> draw();
 		}

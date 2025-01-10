@@ -44,4 +44,19 @@ int main() {
 	
 	std::cout << std::endl << "Ending testing of Horizontal Scroll Bar" << std::endl << std::endl;
 	
+	std::cout << std::endl << "Testing of Decorated window" << std::endl << std::endl;
+	
+	Window * decoratedWindow = new HorizontalScrollBarDecorator( 
+		new VerticalScrollBarDecorator(
+			new SimpleWindow()
+		)
+	);
+	
+	std::cout << decoratedWindow -> getDescription() << std::endl;
+	
+	decoratedWindow -> draw();
+	
+	std::cout << std::endl << "Ending testing of Decorated window" << std::endl << std::endl;
+	
+	
 }
