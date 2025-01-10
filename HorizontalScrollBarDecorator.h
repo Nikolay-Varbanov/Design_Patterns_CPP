@@ -12,6 +12,7 @@ class HorizontalScrollBarDecorator : public WindowDecorator {
 			std::cout << "Constructing a HorizontalScrollBarDecorator" << std::endl;
 		}
 		~HorizontalScrollBarDecorator() {
+			delete m_decoratedWindow;
 			std::cout << "Deconstructing a HorizontalScrollBarDecorator" << std::endl;
 		}
 	public: // Utility

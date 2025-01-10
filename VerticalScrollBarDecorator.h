@@ -14,6 +14,7 @@ class VerticalScrollBarDecorator : public WindowDecorator {
 			}
 		~VerticalScrollBarDecorator() 
 			{ 
+				delete m_decoratedWindow;
 				std::cout << "Destructing a VerticalScrollBarDecorator" << std::endl; 
 			}
 	public: // Utilities

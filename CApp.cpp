@@ -42,6 +42,8 @@ int main() {
 	
 	horizontalScrollBar -> draw();
 	
+	delete horizontalScrollBar;
+	
 	std::cout << std::endl << "Ending testing of Horizontal Scroll Bar" << std::endl << std::endl;
 	
 	std::cout << std::endl << "Testing of Decorated window" << std::endl << std::endl;
@@ -55,6 +57,8 @@ int main() {
 	std::cout << decoratedWindow -> getDescription() << std::endl;
 	
 	decoratedWindow -> draw();
+	
+	delete decoratedWindow;
 	
 	std::cout << std::endl << "Ending testing of Decorated window" << std::endl << std::endl;
 	
