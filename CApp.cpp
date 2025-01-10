@@ -2,6 +2,8 @@
 
 #include "VerticalScrollBarDecorator.h"
 
+#include "HorizontalScrollBarDecorator.h"
+
 #include "SimpleWindow.h"
 
 int main() {
@@ -31,5 +33,15 @@ int main() {
 	delete verticalScrollBar;
 	
 	std::cout << std::endl << "Ending testing of Vertical Scroll Bar" << std::endl << std::endl;
+	
+	std::cout << std::endl << "Testing of Horizontal Scroll Bar" << std::endl << std::endl;
+	
+	Window * horizontalScrollBar = new HorizontalScrollBarDecorator( new SimpleWindow() );
+	
+	std::cout << horizontalScrollBar -> getDescription() << std::endl;
+	
+	horizontalScrollBar -> draw();
+	
+	std::cout << std::endl << "Ending testing of Horizontal Scroll Bar" << std::endl << std::endl;
 	
 }
