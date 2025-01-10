@@ -7,7 +7,7 @@
 
 class WindowDecorator : public Window {
 	public: // Constructors
-		WindowDecorator() {
+		WindowDecorator(Window * decoratedWindow) : m_decoratedWindow(decoratedWindow){
 			std::cout << "Constructing a WindowDecorator" << std::endl;
 		}
 		~WindowDecorator() {
