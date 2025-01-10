@@ -1,10 +1,7 @@
 #include <iostream>
 
 #include "ConcreteFactoryA.h"
-/*
-#include "ConcreteProductA.h"
-#include "ConcreteProductB.h"
-*/
+
 int main() {
 	
 	std::cout << "Hey Im Working here!!!" << std::endl;
