@@ -8,6 +8,7 @@ int main() {
 	
 	// Init
 	FactoryMethod * factory = new ConcreteFactoryA();
+	
 	// explicit conversion to "(char*)" to suppres warning string to char*
 	Product * productA = factory -> createProduct((char*)"ConcreteProductA"); 
 	Product * productB = factory -> createProduct((char*)"ConcreteProductB");
