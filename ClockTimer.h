@@ -1,7 +1,9 @@
 #ifndef _CLOCK_TIMER_H
 #define _CLOCK_TIMER_H
 
-class ClockTimer {
+#include "Subject.h"
+
+class ClockTimer : Subject {
 	public: // Constructs
 		ClockTimer();
 		~ClockTimer();

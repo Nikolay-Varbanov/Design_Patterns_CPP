@@ -1,8 +1,6 @@
 #include <iostream>
 
 #include <time.h>
-//#include <sys/types.h>
-//#include <sys/typeb.h>
 #include <string.h>
 
 #include "ClockTimer.h"
@@ -40,5 +38,5 @@ int ClockTimer::GetSecond() {
 void ClockTimer::Tick() { 
 	_tzset();
 	_strtime( tmpbuf );
-	// Notify goes here
+	Notify();
 }
