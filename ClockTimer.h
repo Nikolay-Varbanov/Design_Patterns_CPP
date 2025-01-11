@@ -3,7 +3,7 @@
 
 #include "Subject.h"
 
-class ClockTimer : Subject {
+class ClockTimer : public Subject {
 	public: // Constructs
 		ClockTimer();
 		~ClockTimer();
