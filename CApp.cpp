@@ -10,20 +10,25 @@ int main() {
 	
 	std::string weapon = "Sword";
 	
-	attacker.equipWeapon(weapon);
+	if( attacker.equipWeapon(weapon) == NULL )
+		std::cout << "In client ewuipWaopon() Failed!!!" << std::endl;
 	
 	attacker.attack();
 	
 	weapon = "Hammer";
 
-	attacker.equipWeapon(weapon);
+	if( attacker.equipWeapon(weapon) == NULL )
+		std::cout << "In client ewuipWaopon() Failed!!!" << std::endl;
 	
 	attacker.attack();
 	
 	weapon = "Axe";
 
-	attacker.equipWeapon(weapon);
+		if( attacker.equipWeapon(weapon) == NULL )
+		std::cout << "In client ewuipWaopon() Failed!!!" << std::endl;
 	
 	attacker.attack();
+	
+	std::cout << "Done attacking" << std::endl;
 	
 }

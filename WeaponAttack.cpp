@@ -1,6 +1,8 @@
+#include <iostream>
+
 #include "WeaponAttack.h"
 
-#include <iostream>
+#include "SwordWeapon.h"
 
 WeaponAttack::WeaponAttack() {
 	
@@ -10,6 +12,12 @@ WeaponAttack::WeaponAttack() {
 	_weaponTypes.push_back("Hammer");
 	_weaponTypes.push_back("Axe");
 	
+	_availableWeapons.reserve(3);
+	
+	_availableWeapons.push_back(new SwordWeapon());
+	
+	_equippedWeapon = _availableWeapons[0];
+	
 }
 
 WeaponAttack::~WeaponAttack() {
@@ -17,6 +25,8 @@ WeaponAttack::~WeaponAttack() {
 	std::cout << "Destructing a WeaponAttack" << std::endl;
 	
 	_weaponTypes.clear();
+	
+	delete _availableWeapons[0];
 	
 }
 
@@ -29,9 +39,15 @@ bool WeaponAttack::equipWeapon(std::string wType) {
 								<< _weaponTypes[i]
 								<< " weapon"
 								<< std::endl;
-			
+								
+		if(i < _availableWeapons.size() ) {	
+			_equippedWeapon = _availableWeapons[i];
 			return true;
-
+		} else {
+			std::cout << "In context equipWeapon() Failed!!!" << std::endl;
+			return false;
+		}
+	
 		};
 		
 	};
@@ -44,6 +60,6 @@ bool WeaponAttack::equipWeapon(std::string wType) {
 
 void WeaponAttack::attack() {
 	
-	std::cout << "Call to undefined interface WeaponAttack::attack()" << std::endl;
+	_equippedWeapon -> attack();
 	
 };
