@@ -3,6 +3,7 @@
 #include "WeaponAttack.h"
 
 #include "SwordWeapon.h"
+#include "HammerWeapon.h"
 
 WeaponAttack::WeaponAttack() {
 	
@@ -14,7 +15,8 @@ WeaponAttack::WeaponAttack() {
 	
 	_availableWeapons.reserve(3);
 	
-	_availableWeapons.push_back(new SwordWeapon());
+	_availableWeapons.push_back( new SwordWeapon() );
+	_availableWeapons.push_back( new HammerWeapon() );
 	
 	_equippedWeapon = _availableWeapons[0];
 	
@@ -27,6 +29,7 @@ WeaponAttack::~WeaponAttack() {
 	_weaponTypes.clear();
 	
 	delete _availableWeapons[0];
+	delete _availableWeapons[1];
 	
 }
 
