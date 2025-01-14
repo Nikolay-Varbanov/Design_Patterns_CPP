@@ -2,8 +2,9 @@
 
 #include "AnimationPhaseJumpPeak.h"
 
-//#include "AnimationPhaseIdle.h"
+#include "AnimationPhaseJumpDouble.h"
 
+#include "AnimationPhaseJumpLanding.h"
 
 AnimationPhaseJumpPeak::AnimationPhaseJumpPeak(Animator * animator) {
 	
@@ -27,10 +28,15 @@ void AnimationPhaseJumpPeak::OnLoop() {
 
 	OnEvent();
 	
-	/*if(_event == 'j') {
-		Animation * _tempAnimation = new AnimationPhaseIdle(_animator);
+	Animation * _tempAnimation;
+	
+	if(_event == 'j') {
+		_tempAnimation = new AnimationPhaseJumpDouble(_animator);
 		_animator -> changeAnimation( _tempAnimation );
-	}*/
+	} else {
+		_tempAnimation = new AnimationPhaseJumpLanding(_animator);
+		_animator -> changeAnimation( _tempAnimation );
+	}
 	
 };
 
