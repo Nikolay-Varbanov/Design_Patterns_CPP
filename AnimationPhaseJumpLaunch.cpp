@@ -2,7 +2,7 @@
 
 #include "AnimationPhaseJumpLaunch.h"
 
-#include "AnimationPhaseIdle.h"
+#include "AnimationPhaseJumpPeak.h"
 
 
 AnimationPhaseJumpLaunch::AnimationPhaseJumpLaunch(Animator * animator) {
@@ -26,7 +26,7 @@ void AnimationPhaseJumpLaunch::OnLoop() {
 	OnRender();
 
 	std::cout << "In AnimationPhaseJumpLaunch::OnLoop() Landing" << std::endl;
-	Animation * _tempAnimation = new AnimationPhaseIdle(_animator);
+	Animation * _tempAnimation = new AnimationPhaseJumpPeak(_animator);
 	_animator -> changeAnimation( _tempAnimation );
 	
 };
