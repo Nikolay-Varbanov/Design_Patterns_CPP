@@ -2,6 +2,8 @@
 
 #include "AnimationPhaseIdle.h"
 
+#include "AnimationPhaseJumpLaunch.h"
+
 
 AnimationPhaseIdle::AnimationPhaseIdle(Animator * animator) { 
 
@@ -28,7 +30,7 @@ void AnimationPhaseIdle::OnLoop() {
 	if(_event == 'j') {
 	
 		std::cout << "In AnimationPhaseIdle::OnLoop() jump attempted" << std::endl;
-		Animation * _tempAnimation = new AnimationPhaseIdle(_animator);
+		Animation * _tempAnimation = new AnimationPhaseJumpLaunch(_animator);
 		_animator -> changeAnimation( _tempAnimation );
 	}
 
