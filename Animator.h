@@ -12,6 +12,7 @@ class Animator {
 		char _event;
 	public: // Utilities
 		void OnLoop();
+		void changeAnimation(Animation *&);
 };
 
 #endif

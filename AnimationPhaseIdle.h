@@ -3,11 +3,14 @@
 
 #include "Animation.h"
 
+#include "Animator.h"
+
 class AnimationPhaseIdle : public Animation {
 	public: // Constructs
-		AnimationPhaseIdle();
+		AnimationPhaseIdle(Animator *);
 		~AnimationPhaseIdle();
 	private: // Facilities
+		Animator * _animator;
 		char _event;
 	public: // Utilities
 		void OnLoop();

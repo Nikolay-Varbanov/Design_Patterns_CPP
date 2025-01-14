@@ -3,9 +3,11 @@
 #include "AnimationPhaseIdle.h"
 
 
-AnimationPhaseIdle::AnimationPhaseIdle() { 
+AnimationPhaseIdle::AnimationPhaseIdle(Animator * animator) { 
 
 	std::cout << "Constrcuting an AnimationPhaseIdle" << std::endl;
+	
+	_animator = animator;
 
 };
 
@@ -23,8 +25,12 @@ void AnimationPhaseIdle::OnLoop() {
 	
 	OnEvent();
 	
-	if(_event == 'j')
+	if(_event == 'j') {
+	
 		std::cout << "In AnimationPhaseIdle::OnLoop() jump attempted" << std::endl;
+		Animation * _tempAnimation = new AnimationPhaseIdle(_animator);
+		_animator -> changeAnimation( _tempAnimation );
+	}
 
 };
 
