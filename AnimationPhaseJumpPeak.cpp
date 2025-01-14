@@ -31,9 +31,21 @@ void AnimationPhaseJumpPeak::OnLoop() {
 	Animation * _tempAnimation;
 	
 	if(_event == 'j') {
+		
+		std::cout << std::endl
+							<< "+++Double Jumping+++" 
+							<< std::endl
+							<< std::endl;
+							
 		_tempAnimation = new AnimationPhaseJumpDouble(_animator);
 		_animator -> changeAnimation( _tempAnimation );
 	} else {
+		
+		std::cout << std::endl
+							<< "+++Landing+++" 
+							<< std::endl
+							<< std::endl;
+							
 		_tempAnimation = new AnimationPhaseJumpLanding(_animator);
 		_animator -> changeAnimation( _tempAnimation );
 	}
@@ -48,6 +60,9 @@ void AnimationPhaseJumpPeak::OnEvent() {
 
 void AnimationPhaseJumpPeak::OnRender() {
 	
-	std::cout << "You can press 'j' for a double jump" << std::endl;
+	std::cout << std::endl
+						<< "***You can press 'j' for a double jump***" 
+						<< std::endl
+						<< std::endl;
 	
 };

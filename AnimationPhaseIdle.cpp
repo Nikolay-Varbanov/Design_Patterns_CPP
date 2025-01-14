@@ -29,7 +29,11 @@ void AnimationPhaseIdle::OnLoop() {
 	
 	if(_event == 'j') {
 	
-		std::cout << "In AnimationPhaseIdle::OnLoop() jump attempted" << std::endl;
+		std::cout << std::endl
+							<< "+++Jumping+++" 
+							<< std::endl
+							<< std::endl;
+							
 		Animation * _tempAnimation = new AnimationPhaseJumpLaunch(_animator);
 		_animator -> changeAnimation( _tempAnimation );
 	}
@@ -37,8 +41,6 @@ void AnimationPhaseIdle::OnLoop() {
 };
 
 void AnimationPhaseIdle::OnEvent() { 
-
-	std::cout << "In AnimationPhaseIdle::OnEvent()" << std::endl;
 	
 	std::cin >> _event;
 
@@ -46,6 +48,11 @@ void AnimationPhaseIdle::OnEvent() {
 
 void AnimationPhaseIdle::OnRender() { 
 
-	std::cout << "Press 'j' to jump" << std::endl;
+	std::cout << "In AnimationPhaseIdle::OnRender()" << std::endl;
+
+	std::cout << std::endl
+						<< "***Press 'j' to jump***" 
+						<< std::endl
+						<< std::endl;
 
 };

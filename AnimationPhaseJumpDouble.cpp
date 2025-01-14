@@ -25,6 +25,11 @@ void AnimationPhaseJumpDouble::OnLoop() {
 	
 	OnRender();
 	
+	std::cout << std::endl
+						<< "+++Landing+++" 
+						<< std::endl
+						<< std::endl;
+	
 	Animation * _tempAnimation = new AnimationPhaseJumpLanding(_animator);
 	_animator -> changeAnimation( _tempAnimation );
 	
@@ -38,6 +43,9 @@ void AnimationPhaseJumpDouble::OnEvent() {
 
 void AnimationPhaseJumpDouble::OnRender() {
 	
-	std::cout << "AnimationPhaseJumpDouble" << std::endl;
+	std::cout << std::endl
+						<< "***AnimationPhaseJumpDouble***" 
+						<< std::endl
+						<< std::endl;
 	
 };

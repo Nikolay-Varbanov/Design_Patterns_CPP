@@ -16,7 +16,10 @@ int main() {
 		
 		animator -> OnLoop();
 		
-		std::cout << "To exit the program press: q" << std::endl;
+		std::cout << std::endl
+							<< "!!!You can press 'q' to exit the program!!!" 
+							<< std::endl
+							<< std::endl;
 		
 		std::cin >> _event;
 		

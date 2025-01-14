@@ -25,7 +25,11 @@ void AnimationPhaseJumpLaunch::OnLoop() {
 	
 	OnRender();
 
-	std::cout << "In AnimationPhaseJumpLaunch::OnLoop() Landing" << std::endl;
+	std::cout << std::endl
+						<< "+++Peaking+++" 
+						<< std::endl
+						<< std::endl;
+						
 	Animation * _tempAnimation = new AnimationPhaseJumpPeak(_animator);
 	_animator -> changeAnimation( _tempAnimation );
 	
@@ -39,6 +43,9 @@ void AnimationPhaseJumpLaunch::OnEvent() {
 
 void AnimationPhaseJumpLaunch::OnRender() {
 	
-	std::cout << "AnimationPhaseJumpLaunch" << std::endl;
+	std::cout << std::endl
+						<< "***AnimationPhaseJumpLaunch***" 
+						<< std::endl
+						<< std::endl;
 	
 };
