@@ -14,13 +14,13 @@ int main() {
 		
 		std::cout << "CApp Looping" << std::endl;
 		
+		animator -> OnLoop();
+		
 		std::cout << "To exit the program press: q" << std::endl;
 		
 		std::cin >> _event;
 		
 	} while(_event != 'q');
-	
-	animator -> OnLoop();
 	
 	delete animator;
 	

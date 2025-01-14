@@ -2,9 +2,13 @@
 
 #include "Animator.h"
 
+#include "AnimationPhaseIdle.h"
+
 Animator::Animator() {
 	
 	std::cout << "Constructing an Animator" << std::endl;
+	
+	_currentAnimation = new AnimationPhaseIdle();
 	
 };
 
@@ -16,18 +20,6 @@ Animator::~Animator() {
 
 void Animator::OnLoop() {
 	
-	std::cout << "Entering Animator::OnLoop()" << std::endl;
-	
-};
-
-void Animator::OnEvent() {
-	
-	std::cout << "" << std::endl;
-	
-};
-
-void Animator::OnRender() {
-	
-	std::cout << "" << std::endl;
+	_currentAnimation -> OnLoop();
 	
 };
