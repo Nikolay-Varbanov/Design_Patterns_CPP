@@ -1,48 +1,48 @@
 #include <iostream>
-
-// Main Meal
-#include "Hamburger.h"
-#include "HotDog.h"
-#include "CheeseBurger.h"
-
-// Side Meal
-#include "FrenchFries.h"
-#include "OnionRings.h"
-#include "ChikenChunks.h"
-
-// Drinks
-#include "Cola.h"
-#include "Soda.h"
-#include "Fanta.h"
-
-// Toy
-#include "Car.h"
-#include "ActionFigure.h"
-#include "SportToy.h"
+#include <string>
 
 #include "Order.h"
+
+#include "OrderBuilder.h"
 
 int main() {
 
 	std::cout << "Hey Im Working here!!!" << std::endl;
 	
-	std::cout << "Order" << std::endl;
+	OrderBuilder * kidOrder = new OrderBuilder();
 	
-	MainMeal * hamburger = new Hamburger();
+	std::string which = "Hamburger";
 	
-	SideMeal * frenchFries = new FrenchFries();
+	if( kidOrder -> OrderMainMeal(which) ) {
+		std::cout << "OrderMainMeal(which) Sucessfull" << std::endl;
+	}
 	
-	Drinks * cola = new Cola();
+	which = "Chiken Chunks";
 	
-	Toy * car = new Car();
+	if(	kidOrder -> OrderSaidMeal(which) ) {
+		std::cout << "OrderSaidMeal(which) Sucessfull" << std::endl;
+	}
 	
-	Order * order = new Order ( hamburger,
-															frenchFries,
-															cola,
-															car );
+	which = "Soda";
 	
-	order -> OnRender();
+	if( kidOrder -> OrderDrinks(which) ) {
+		std::cout << "OrderDrinks(which) Sucessfull" << std::endl;
+	}
 	
-	delete order;
+	which = "Car";
+	
+	if( kidOrder -> OrderToy(which) ) {
+		std::cout << "OrderToy(which) Sucessfull" << std::endl;
+	}
+	
+	Order * order = kidOrder -> OrderMeal();
+	
+	if(order != NULL) {	
+		order -> OnRender();
+		
+		delete order;
+	}
+	
+	delete kidOrder;
 	
 }

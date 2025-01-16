@@ -35,13 +35,17 @@ class Order {
 		Toy * _toy;
 	public: // Utilities
 		void OnRender() {
-			std::cout << "Order has: "
+			std::cout << std::endl
+								<< "Order has: "
+								<< std::endl
 								<< std::endl;
 			
 			_mainMeal -> OnRender();
 			_sideMeal -> OnRender();
 			_drinks -> OnRender();
 			_toy -> OnRender();
+			
+			std::cout << std::endl;
 			
 		};
 };
