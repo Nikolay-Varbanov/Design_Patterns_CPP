@@ -15,6 +15,11 @@
 #include "Soda.h"
 #include "Fanta.h"
 
+// Toy
+#include "Car.h"
+#include "ActionFigure.h"
+#include "SportToy.h"
+
 int main() {
 
 	std::cout << "Hey Im Working here!!!" << std::endl;
@@ -60,5 +65,19 @@ int main() {
 	delete cola;
 	delete soda;
 	delete fanta;
+	
+	std::cout << "Toy" << std::endl;
+	
+	Toy * car = new Car();
+	Toy * actionFigure = new ActionFigure();
+	Toy * sportToy = new SportToy();
+	
+	car -> OnRender();
+	actionFigure -> OnRender();
+	sportToy -> OnRender();
+	
+	delete car;
+	delete actionFigure;
+	delete sportToy;
 	
 }
