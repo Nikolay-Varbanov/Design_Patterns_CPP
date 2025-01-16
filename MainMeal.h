@@ -5,8 +5,8 @@
 
 class MainMeal {
 	public: // Constructs
-		MainMeal() { std::cout << "Constructing a MainMeal" << std::endl; };
-		virtual ~MainMeal() { std::cout << "Destructing a MainMeal" << std::endl; };
+		MainMeal() { std::cout << "Constructing a Main Meal" << std::endl; };
+		virtual ~MainMeal() { std::cout << "Destructing a Main Meal" << std::endl; };
 	public: // Utilities
 		virtual void OnRender() = 0;
 };
