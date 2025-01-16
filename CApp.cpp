@@ -10,6 +10,11 @@
 #include "OnionRings.h"
 #include "ChikenChunks.h"
 
+// Drinks
+#include "Cola.h"
+#include "Soda.h"
+#include "Fanta.h"
+
 int main() {
 
 	std::cout << "Hey Im Working here!!!" << std::endl;
@@ -41,4 +46,19 @@ int main() {
 	delete frenchFries;
 	delete onionRings;
 	delete chikenChunks;
+	
+	std::cout << "Drinks" << std::endl;
+	
+	Drinks * cola = new Cola();
+	Drinks * soda = new Soda();
+	Drinks * fanta = new Fanta();
+	
+	cola -> OnRender();
+	soda -> OnRender();
+	fanta -> OnRender();
+	
+	delete cola;
+	delete soda;
+	delete fanta;
+	
 }
