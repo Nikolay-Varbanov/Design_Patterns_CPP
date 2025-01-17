@@ -16,15 +16,12 @@ class SimpleElement : public HTMLElement {
 		std::string _tagName;
 	public: // Utilities
 		void OnRender() { 
-			std::cout << "<" 
-								<< _tagName 
-								<< ">" 
-								<< std::endl 
-								<< "</" 
-								<< _tagName 
-								<< ">" 
-								<< std::endl; 
+			RenderTagOpening();
+			RenderTagClosing();
 		};
+	protected: // Utilities
+		void RenderTagOpening() { std::cout << "<" << _tagName << ">" << std::endl; };
+		void RenderTagClosing() { std::cout << "</" << _tagName << ">" << std::endl; };
 };
 
 #endif

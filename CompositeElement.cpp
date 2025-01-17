@@ -1,6 +1,6 @@
 #include "CompositeElement.h"
 
-CompositeElement::CompositeElement(std::string tagName) : _tagName(tagName) {
+CompositeElement::CompositeElement(std::string tagName) : SimpleElement(tagName) {
 	
 	std::cout << "Constructing a CompositeElement" << std::endl;
 	
@@ -18,12 +18,11 @@ CompositeElement::~CompositeElement() {
 
 void CompositeElement::OnRender() {
 	
-	std::cout << "<" << _tagName << ">" << std::endl;
+	RenderTagOpening();
 	for(int i = 0; i < _children.size(); i++) {
 		_children[i] -> OnRender();
 	}
-	
-	std::cout << "</" << _tagName << ">" << std::endl;
+	RenderTagClosing();
 	
 };
 

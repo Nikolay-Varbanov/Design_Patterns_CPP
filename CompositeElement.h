@@ -5,14 +5,14 @@
 #include <string>
 #include <vector>
 
-#include "HTMLElement.h"
+#include "SimpleElement.h"
 
-class CompositeElement : public HTMLElement {
+class CompositeElement : public SimpleElement {
 	public: // Constructs
 		CompositeElement(std::string);
 		~CompositeElement();
 	public: // Facilities
-		std::string _tagName;
+		//std::string _tagName;
 		std::vector<HTMLElement *> _children;
 	public: // Utilities
 		void OnRender();
